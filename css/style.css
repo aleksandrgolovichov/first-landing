@@ -117,11 +117,11 @@ font-size: 26px;
 font-family: sans-serif;
 font-weight: 600;
 color: #d9d9d9;
-padding: 22px 44px 22px 44px;
+padding: 25px 50px 25px 50px;
 border-radius: 60px;
 text-transform: uppercase;
 background-image: url("../images/Rectangle.svg");
-width: 264px;
+width: 290px;
 /* background-repeat: no-repeat; */
 /* display: inline; */
 }
@@ -436,6 +436,8 @@ padding-top: 40px;
     border-radius: 30px;
     border: 2px solid white;
     box-shadow: 11px 11px 11px 11px #F6CA53;
+    width: 584px;
+    height: 360px;
   }
 
   .project__inner-item{
@@ -478,9 +480,9 @@ margin-bottom: 50px;
   font-family: sans-serif;
   font-weight: 600;
   color: #d9d9d9;
-  padding: 22px 44px 22px 44px;
+  padding: 25px 50px 25px 50px;
   border-radius: 60px;
   text-transform: uppercase;
   background-image: url("../images/Rectangle.svg");
-  width: 264px;
+  width: 290px;
 }
