@@ -33,7 +33,7 @@ html,body{
   border-radius: 48px;
   right: 0px;
   bottom: auto;
-  top: 19%;
+  top: 8%;
 
 }
 
@@ -52,7 +52,7 @@ html,body{
 .header__content-inner{
   display: flex;
   flex-direction: column;
-  justify-content: center;
+  justify-content:  flex-start;
   min-height: 100vh;
   /* padding-top: 140px; */
   padding-bottom: auto;
@@ -86,8 +86,8 @@ html,body{
 
 .HI{
 font-size: 88px;
-margin-bottom: 44px;
-padding-top: 100px;
+margin-bottom: 50px;
+padding-top: 60px;
 }
 
 .title{
@@ -131,7 +131,7 @@ width: 290px;
   font-size: 24px;  
   font-weight: 500;
   max-width: 846px;
-  margin-top: 96px;
+  margin-top: 140px;
 }
 
 .price{
@@ -157,10 +157,10 @@ width: 290px;
   content:"";
   background-image: url("../images/icon_1.png");
   position: absolute;
-  width: 32px;
-  height: 32px;
+  width: 40px;
+  height: 40px;
   left: 0px;
-
+  background-repeat: no-repeat;
 }
 
 .price__inner-item_web{
@@ -173,9 +173,10 @@ width: 290px;
   content:"";
   background-image: url("../images/wrld_icon.png");
   position: absolute;
-  width: 32px;
-  height: 32px;
+  width: 40px;
+  height: 40px;
   left: 0px;
+  background-repeat: no-repeat;
 }
 a
 .price__inner-item_right{
