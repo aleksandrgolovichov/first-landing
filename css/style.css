@@ -642,6 +642,22 @@ margin-bottom: 50px;
     margin-top: 10px;
   }
 
+  .footer_button{
+    background: transparent;
+    border: none;
+    line-height: 42px;
+    font-size: 26px;
+    font-family: sans-serif;
+    font-weight: 600;
+    color: #d9d9d9;
+    padding: 25px 50px 25px 50px;
+    border-radius: 60px;
+    text-transform: uppercase;
+    background-image: url("../images/button_first.png");
+    width: 290px;
+    background-repeat: no-repeat;
+  }
+
 }
 
 
@@ -709,6 +725,23 @@ margin-bottom: 50px;
 
   .footer_text {
     font-size: 16px;
+    padding-bottom: 30px;
+    }  
+
+    .footer_button{
+      background: transparent;
+      border: none;
+      line-height: 42px;
+      font-size: 26px;
+      font-family: sans-serif;
+      font-weight: 600;
+      color: #d9d9d9;
+      padding: 25px 50px 25px 50px;
+      border-radius: 60px;
+      text-transform: uppercase;
+      background-image: url("../images/button_first.png");
+      width: 290px;
+      background-repeat: no-repeat;
     }  
   }
 
