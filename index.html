@@ -9,69 +9,56 @@
   <link rel="stylesheet" href="css/_reset.css">
   <link rel="stylesheet" href="css/style.css">
   <link rel="shortcut icon" href="images/icon.png">
-  <title>S.Golovichov</title>
-</head>
-<body>
-  <header class="header">
-    <div class="container">
-      <div class="header__inner">
-        <div class="header__inner-img">
-        <a class="img_user" target="_blank" href="https://www.fiverr.com/sashagolovichov/buying?source=avatar_menu_profile#!">
-          <img src="images/man.svg" alt="#">
-        </a>
-        <a class="img_inst" target="_blank" href="https://www.instagram.com/nexora_9/">
-          <img src="images/Vector.svg" alt="instagram image">
-        </a>
-      </div>
-        <nav class="menu">
-          <ul class="header__list">
+    <title>S.Golovichov</title>
+  </head>
+  <body>
+    <header class="header">
+      <div class="container">
+        <div class="header__inner">
+          <div class="header__icons">
+            <a class="img_user" target="_blank" href="https://www.fiverr.com/sashagolovichov/buying?source=avatar_menu_profile">
+              <img src="images/man.svg" alt="user icon" width="23" height="30" />
+            </a>
+            <a class="img_inst" target="_blank" href="https://www.instagram.com/nexora_9/">
+              <img src="images/Vector.svg" alt="instagram icon" />
+            </a>
+          </div>
+          <div class="burger" id="burger">☰</div>
+          <ul class="header__list" id="nav">
             <li class="header__list-item">
-              <a class="header__list-link" href="">price</a>
+              <a class="header__list-link" href="#price">price</a>
             </li>
             <li class="header__list-item">
-              <a class="header__list-link" href="#">Stages of work</a>
+              <a class="header__list-link" href="#stages">stages</a>
             </li>
             <li class="header__list-item">
-              <a class="header__list-link" href="#">project</a>
+              <a class="header__list-link" href="#project">project</a>
             </li>
             <li class="header__list-item">
-              <a class="header__list-link" href="#">reviews</a>
+              <a class="header__list-link" href="#reviews">reviews</a>
             </li>
           </ul>
-        </nav>
-      </div>
-    </div>
-      <div class="header__content">
-        <div class="container">
-          <div class="header__content-inner">
-
-            <!-- <img class="big_image" src="images/bridge.jpg" alt=""> -->
-
-          <h2 class="HI">
-            HI
-          </h2>
-          <h1 class="title">
-            I'm Aleksandr Golovichov
-          </h1>
-          <p class="header__text">
-            Programmer, designer. I have more than 3 years of experience in programming and design
-          </p>
-
-          <a class="button  header__content-button" target="_blank" href="https://www.instagram.com/nexora_9/">
-            <span class="call">get in touch</span>
-          </a>
-  
-          <p class="citation">“Challenges are what make life interesting, and overcoming them is what makes life meaningful.” - Joshua J. Marin</p>
-         </div>
-
         </div>
       </div>
-
-    
-  </header>
+      <div class="menu-overlay" id="menuOverlay"></div>
+      <div class="container">
+        <div class="header__content-inner">
+          <h2 class="HI">HI</h2>
+          <h1 class="title">I'm Aleksandr Golovichov</h1>
+          <p class="header__text">
+            Programmer, designer. I have more than 3 years of experience in programming and design.
+          </p>
+          <a class="header__content-button" href="https://www.instagram.com/nexora_9/" target="_blank">get in touch</a>
+          <p class="citation">
+            “Challenges are what make life interesting, and overcoming them is what makes life meaningful.” - Joshua J. Marin
+          </p>
+        </div>
+      </div>
+    </header> 
+  
  
  <main class="main">
-  <section class="price">
+ <section class="price">
     <div class="container">
       <h2 class="title">price</h2>
         <div class="price__inner">
@@ -167,19 +154,19 @@
           </div>
         </div>
     </div>
-  </section>
+  </section> 
 
   <section class="cta">
     <div class="container">
       <div class="cta__inner">
 
-         <!-- <div class="cta__inner-left">
-          <img src="images/iaptop_on_table.svg" alt="laptop on table">
-        </div> -->
-
         <div class="cta__inner-right">
           <a class="cta__message" href="#">
-            <img src="images/Icon__cta.svg" alt="message icon">
+            <picture>
+              <source srcset="images/Icon_cta2.svg-mobile.svg" media="(max-width: 768px)" />
+              <img src="images/Icon__cta.svg" alt="Иконка CTA" />
+            </picture>
+            <!-- <img src="images/Icon__cta.svg" alt="message icon"> -->
           </a>
            <div class="inner__cta-text">
           <p class="cta__text">Everything in the block above is an approximate cost and execution time, it all depends on the volume and complexity of the order.</p>
@@ -268,7 +255,7 @@
           </div>
         </div>
 
-        <!-- start -->
+        
         <div class="project__inner-item">
           <img class="project__item-img" src="images/om.png" alt="images">
           <div class="project__item-right">
@@ -285,7 +272,7 @@
           </div>
         </div>
 
-        <!-- start -->
+        
         <div class="project__inner-item">
           <img class="project__item-img" src="images/CHAYka.png" alt="images">
           <div class="project__item-right">
@@ -310,7 +297,7 @@
 
   
 
- </main>
+ </main> 
 
 
 <footer class="footer">
@@ -327,7 +314,7 @@
     <span class="call"> get in tuch</span>
   </button>
 </div>
-</footer>
+</footer> 
 
 
 
