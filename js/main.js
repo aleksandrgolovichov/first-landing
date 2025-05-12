@@ -42,3 +42,27 @@ navLinks.forEach(link => {
   });
 });
 
+document.querySelectorAll('.project__image-slider').forEach(slider => {
+  const slides = slider.querySelectorAll('.project__item-img');
+  const leftBtn = slider.querySelector('.project-arrow.left');
+  const rightBtn = slider.querySelector('.project-arrow.right');
+  let current = 0;
+
+  function showSlide(index) {
+    slides.forEach((slide, i) => {
+      slide.classList.toggle('active', i === index);
+    });
+  }
+
+  leftBtn.addEventListener('click', () => {
+    current = (current - 1 + slides.length) % slides.length;
+    showSlide(current);
+  });
+
+  rightBtn.addEventListener('click', () => {
+    current = (current + 1) % slides.length;
+    showSlide(current);
+  });
+
+  showSlide(current);
+});
