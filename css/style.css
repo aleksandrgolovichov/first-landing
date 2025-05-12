@@ -607,6 +607,14 @@ margin-bottom: 50px;
     justify-content: center;
   }
 
+  .process__text{
+    font-size: 18px;
+  }
+
+  .process-inner__title{
+    font-size: 24px;
+    text-transform:uppercase;
+  }
   
   .project{
     padding:60px 100px 60px 0 ;
@@ -672,7 +680,7 @@ margin-bottom: 50px;
   }
 
   .header__text{
-    font-size: 18px;
+    font-size: 23px;
   }
   
   .citation {
@@ -724,7 +732,6 @@ margin-bottom: 50px;
   }
 
   .footer_text {
-    font-size: 16px;
     padding-bottom: 30px;
     }  
 
