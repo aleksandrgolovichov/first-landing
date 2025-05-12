@@ -292,13 +292,14 @@ padding-top: 40px;
   .process-inner__title{
     margin-bottom:24px;
     text-transform: uppercase;
-    padding-top: 0;
+    font-size: 20px;
   }
 
-  .process__inner-item h5.process-inner__title {
+  .process__inner-item h5 .process-inner__title {
     margin-top: 0;
     position: relative;
     top: -8px; 
+    font-size: 20px;
   }
   
 
@@ -315,9 +316,10 @@ padding-top: 40px;
     font-size: 16px;
     line-height: 24px;
     margin-bottom: 120px;
+    font-size: 18px;
   }
 
-  .process__inner-item {
+  .process__inner-item{
     width: 376px;
     padding-left: 104px;
     /* margin-right: 32px; */
