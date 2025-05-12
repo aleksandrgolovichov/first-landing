@@ -295,6 +295,10 @@ padding-top: 40px;
     padding-top: 0;
   }
 
+  .process__inner-item h3 {
+    align-self: flex-start;
+  }
+
   .process__inner{
     display: flex;
     flex-wrap: wrap;
@@ -594,6 +598,10 @@ margin-bottom: 50px;
     font-size: 18px;
   }
 
+  .price__item-row{
+    display: inline-block;
+    padding-inline: 0px 50px 0px 50px;
+  }
 
   .header__list {
     flex-direction: column;
