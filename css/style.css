@@ -587,6 +587,7 @@ margin-bottom: 50px;
   .price__item-title{
     font-size: 24px;
     text-transform: uppercase;
+    margin: 0 auto;
   }
 
   .price__item-title{
