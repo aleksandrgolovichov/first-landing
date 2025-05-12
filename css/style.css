@@ -295,9 +295,12 @@ padding-top: 40px;
     padding-top: 0;
   }
 
-  .process__inner-item h3 {
-    align-self: flex-start;
+  .process__inner-item h5.process-inner__title {
+    margin-top: 0;
+    position: relative;
+    top: -8px; 
   }
+  
 
   .process__inner{
     display: flex;
