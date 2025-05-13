@@ -168,6 +168,10 @@ background-repeat: no-repeat;
   margin-bottom: 70px;
 }
 
+.price__item-title{
+  font-size: 24px;
+}
+
 .price__inner-item::before{
   content:"";
   background-image: url("../images/icon_1.png");
