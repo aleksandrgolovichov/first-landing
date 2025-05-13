@@ -331,7 +331,6 @@ padding-top: 40px;
     font-weight: 700;
     position: absolute;
     left: 40px;
-    top: -8px;
     padding: 0;
   }
 
@@ -519,7 +518,7 @@ padding-top: 40px;
   transform: translateY(-50%);
   background: none;
   border: none;
-  color: white;
+  color: rgb(19, 19, 19);
   font-size: 36px;
   cursor: pointer;
   z-index: 2;
