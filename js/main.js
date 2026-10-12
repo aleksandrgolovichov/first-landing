@@ -2,45 +2,24 @@ const burger = document.getElementById('burger');
 const nav = document.getElementById('nav');
 const overlay = document.getElementById('menuOverlay');
 
-// Показать/скрыть бургер-меню
-burger.addEventListener('click', () => {
-  nav.classList.toggle('active');
-  overlay.classList.toggle('active');
-
-  // Меняем цвет бургер-меню при открытии
-  if (nav.classList.contains('active')) {
-    burger.style.color = '#d9d9d9';
-  } else {
-    burger.style.color = '';
-  }
-});
-
-// Закрыть по клику вне
-overlay.addEventListener('click', () => {
-  nav.classList.remove('active');
-  overlay.classList.remove('active');
-  burger.style.color = '';
-});
-
-// Автоматически закрыть меню при увеличении ширины
-window.addEventListener('resize', () => {
-  if (window.innerWidth > 768) {
-    nav.classList.remove('active');
-    overlay.classList.remove('active');
-    burger.style.color = '';
-  }
-});
-
-// Закрытие меню при клике на любую ссылку
-const navLinks = nav.querySelectorAll('a');
-
-navLinks.forEach(link => {
-  link.addEventListener('click', () => {
-    nav.classList.remove('active');
-    overlay.classList.remove('active');
-    burger.style.color = '';
+if (burger && nav && overlay) {
+  burger.addEventListener('click', () => {
+    nav.classList.toggle('active');
+    overlay.classList.toggle('active');
   });
-});
+
+  overlay.addEventListener('click', () => {
+    nav.classList.remove('active');
+    overlay.classList.remove('active');
+  });
+
+  nav.querySelectorAll('a').forEach(link => {
+    link.addEventListener('click', () => {
+      nav.classList.remove('active');
+      overlay.classList.remove('active');
+    });
+  });
+}
 
 document.querySelectorAll('.project__image-slider').forEach(slider => {
   const slides = slider.querySelectorAll('.project__item-img');
@@ -54,15 +33,44 @@ document.querySelectorAll('.project__image-slider').forEach(slider => {
     });
   }
 
-  leftBtn.addEventListener('click', () => {
-    current = (current - 1 + slides.length) % slides.length;
-    showSlide(current);
-  });
+  if (leftBtn && rightBtn && slides.length > 0) {
+    leftBtn.addEventListener('click', () => {
+      current = (current - 1 + slides.length) % slides.length;
+      showSlide(current);
+    });
 
-  rightBtn.addEventListener('click', () => {
-    current = (current + 1) % slides.length;
-    showSlide(current);
-  });
+    rightBtn.addEventListener('click', () => {
+      current = (current + 1) % slides.length;
+      showSlide(current);
+    });
+  }
 
   showSlide(current);
 });
+
+const projectForm = document.getElementById('projectForm');
+const formStatus = document.getElementById('formStatus');
+
+if (projectForm && formStatus) {
+  projectForm.addEventListener('submit', (e) => {
+    e.preventDefault();
+
+    const name = document.getElementById('clientName').value.trim();
+    const contact = document.getElementById('clientContact').value.trim();
+    const details = document.getElementById('projectDetails').value.trim();
+
+    if (!name || !contact || !details) {
+      formStatus.style.color = '#ef4444';
+      formStatus.textContent = 'Please fill out all required fields :)';
+      return;
+    }
+
+    formStatus.style.color = '#22c55e';
+    formStatus.textContent = 'Thank you! Your request has been sent successfully :)';
+    projectForm.reset();
+
+    setTimeout(() => {
+      formStatus.textContent = '';
+    }, 5000);
+  });
+}
