@@ -2,22 +2,32 @@ const burger = document.getElementById('burger');
 const nav = document.getElementById('nav');
 const overlay = document.getElementById('menuOverlay');
 
+function toggleMenu(isOpen) {
+  nav.classList.toggle('active', isOpen);
+  overlay.classList.toggle('active', isOpen);
+  document.body.style.overflow = isOpen ? 'hidden' : '';
+}
+
 if (burger && nav && overlay) {
   burger.addEventListener('click', () => {
-    nav.classList.toggle('active');
-    overlay.classList.toggle('active');
+    const isOpen = !nav.classList.contains('active');
+    toggleMenu(isOpen);
   });
 
   overlay.addEventListener('click', () => {
-    nav.classList.remove('active');
-    overlay.classList.remove('active');
+    toggleMenu(false);
   });
 
   nav.querySelectorAll('a').forEach(link => {
     link.addEventListener('click', () => {
-      nav.classList.remove('active');
-      overlay.classList.remove('active');
+      toggleMenu(false);
     });
+  });
+
+  window.addEventListener('keydown', (e) => {
+    if (e.key === 'Escape' && nav.classList.contains('active')) {
+      toggleMenu(false);
+    }
   });
 }
 

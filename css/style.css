@@ -11,20 +11,15 @@
   --transition-normal: all 0.4s ease;
 }
 
-*, html, body {
-  box-sizing: border-box;
-  scroll-behavior: smooth;
-}
-
 html, body {
   font-family: var(--font-family);
   margin: 0;
   background-color: var(--bg-color);
   color: var(--text-main);
   overflow-x: hidden;
+  width: 100%;
 }
 
-/* BACKGROUND GLOW EFFECTS */
 .bg-glow {
   position: fixed;
   width: 500px;
@@ -47,7 +42,6 @@ html, body {
   background: radial-gradient(circle, rgba(59, 130, 246, 0.2) 0%, rgba(0,0,0,0) 70%);
 }
 
-/* GLASSMORPHISM BASES */
 .glass-card, .glass-nav {
   background: var(--glass-bg);
   backdrop-filter: blur(20px);
@@ -71,7 +65,6 @@ html, body {
   z-index: 1;
 }
 
-/* HEADER & NAV */
 .header {
   padding-top: 20px;
   min-height: 100vh;
@@ -116,6 +109,7 @@ html, body {
   font-size: 14px;
   letter-spacing: 1px;
   transition: var(--transition-fast);
+  text-decoration: none;
 }
 
 .header__list-link:hover {
@@ -145,8 +139,7 @@ html, body {
   display: flex;
   flex-direction: column;
   align-items: flex-start;
-  max-width: 850px;
-  margin-top: 40px;
+  margin-top: 175px;
 }
 
 .badge {
@@ -155,7 +148,7 @@ html, body {
   font-size: 13px;
   font-weight: 600;
   color: var(--text-muted);
-  margin-bottom: 24px;
+  margin-bottom: 35px;
 }
 
 .hero-title {
@@ -288,6 +281,9 @@ html, body {
   gap: 10px;
   border-top: 1px solid var(--glass-border);
   padding-top: 16px;
+  margin: 0;
+  padding-left: 0;
+  list-style: none;
 }
 
 .price__item-specs li {
@@ -312,7 +308,7 @@ html, body {
 .process__card::before {
   content: attr(data-step);
   position: absolute;
-  top: 20px;
+  top: 5px;
   right: 28px;
   font-size: 32px;
   font-weight: 900;
@@ -332,7 +328,6 @@ html, body {
   color: var(--text-muted);
 }
 
-/* PROJECTS SECTION */
 .project__inner {
   display: flex;
   flex-direction: column;
@@ -442,9 +437,11 @@ html, body {
 }
 
 .glass-input {
-  width: 100%;
+  width: 94%;
   padding: 16px 20px;
-  background: rgba(0, 0, 0, 0.2);
+  background: var(--glass-bg);
+  backdrop-filter: blur(10px);
+  -webkit-backdrop-filter: blur(10px);
   border: 1px solid var(--glass-border);
   border-radius: 12px;
   color: #ffffff;
@@ -452,6 +449,19 @@ html, body {
   font-size: 15px;
   outline: none;
   transition: var(--transition-fast);
+}
+
+select.glass-input {
+  width: 100%;
+  appearance: none;
+  -webkit-appearance: none;
+  -moz-appearance: none;
+  background-image: url("data:image/svg+xml;charset=UTF-8,%3csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 24 24' fill='none' stroke='%23a1a1aa' stroke-width='2' stroke-linecap='round' stroke-linejoin='round'%3e%3Cpolyline points='6 9 12 15 18 9'%3e%3C/polyline%3e%3C/svg%3e");
+  background-repeat: no-repeat;
+  background-position: right 16px center;
+  background-size: 16px;
+  padding-right: 45px;
+  cursor: pointer;
 }
 
 .glass-input:focus {
@@ -492,45 +502,114 @@ select.glass-input option {
   font-size: 16px;
 }
 
+#clientContact {
+  text-overflow: clip;
+  white-space: nowrap;
+}
+
 .burger {
   display: none;
   font-size: 28px;
   cursor: pointer;
 }
 
-@media (max-width: 900px) {
+@media (max-width: 992px) {
   .project__card {
     grid-template-columns: 1fr;
+    gap: 28px;
+  }
+
+  .project__image-slider {
+    width: 100%;
+    aspect-ratio: 16 / 9;
+  }
+
+  .price__grid,
+  .process__grid {
+    grid-template-columns: repeat(2, 1fr);
   }
 }
 
-@media (max-width: 768px) {
-  .header__list {
-    position: fixed;
-    top: 0;
-    left: -100%;
-    width: 280px;
-    height: 100vh;
-    background: rgba(11, 10, 14, 0.98);
-    backdrop-filter: blur(20px);
-    flex-direction: column;
-    padding: 100px 30px;
-    transition: var(--transition-normal);
-    z-index: 100;
+@media screen and (max-width: 768px) {
+  .burger {
+    display: block !important;
+    visibility: visible !important;
+    opacity: 1 !important;
+    color: #ffffff !important;
+    font-size: 26px !important;
+    line-height: 1 !important;
+    cursor: pointer !important;
+    z-index: 1001 !important;
+    margin-left: auto;
   }
 
-  .header__list.active { left: 0; }
-  .burger { display: block; z-index: 110; }
-  .header__socials { display: none; }
-  
+  .header__socials {
+    display: none !important;
+  }
+
+  .header__list {
+    position: fixed !important;
+    top: 0 !important;
+    left: 0 !important;
+    width: 280px !important;
+    height: 100vh !important;
+    background: #0d0c11 !important;
+    border-right: 1px solid rgba(255, 255, 255, 0.1);
+    flex-direction: column !important;
+    padding: 80px 30px 40px !important;
+    gap: 24px !important;
+    transform: translateX(-100%) !important;
+    visibility: hidden !important;
+    transition: transform 0.3s ease, visibility 0.3s ease !important;
+    z-index: 9999 !important;
+  }
+
+  .header__list.active {
+    transform: translateX(0) !important;
+    visibility: visible !important;
+  }
+
   .menu-overlay {
     display: none;
-    position: fixed;
-    inset: 0;
-    background: rgba(0, 0, 0, 0.7);
-    z-index: 90;
+    position: fixed !important;
+    inset: 0 !important;
+    background: rgba(0, 0, 0, 0.75) !important;
+    backdrop-filter: blur(5px) !important;
+    -webkit-backdrop-filter: blur(5px) !important;
+    z-index: 9998 !important;
   }
 
-  .menu-overlay.active { display: block; }
-  .contact__inner { padding: 30px 20px; }
+  select.glass-input {
+  width: 108%;
+  appearance: none;
+  -webkit-appearance: none;
+  -moz-appearance: none;
+  background-image: url("data:image/svg+xml;charset=UTF-8,%3csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 24 24' fill='none' stroke='%23a1a1aa' stroke-width='2' stroke-linecap='round' stroke-linejoin='round'%3e%3Cpolyline points='6 9 12 15 18 9'%3e%3C/polyline%3e%3C/svg%3e");
+  background-repeat: no-repeat;
+  background-position: right 16px center;
+  background-size: 16px;
+  padding-right: 45px;
+  cursor: pointer;
+}
+
+  .menu-overlay.active {
+    display: block !important;
+  }
+}
+
+@media (max-width: 480px) {
+  .hero-title {
+    font-size: 30px;
+  }
+
+  .badge {
+    font-size: 12px;
+    padding: 6px 14px;
+  }
+
+  .project-arrow {
+    width: 32px;
+    height: 32px;
+    font-size: 14px;
+  }
 }
