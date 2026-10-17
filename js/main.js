@@ -83,4 +83,4 @@ if (projectForm && formStatus) {
       formStatus.textContent = '';
     }, 5000);
   });
-}
+    }
