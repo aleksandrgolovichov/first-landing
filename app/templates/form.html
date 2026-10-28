@@ -1,34 +1,107 @@
-<!DOCTYPE html>
+<!doctype html>
 <html lang="en">
 <head>
-    <meta charset="UTF-8">
-    <title>Form</title>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="description" content="Start a project with Aleksandr Golovichov">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <meta name="color-scheme" content="dark">
+  <link href="https://fonts.googleapis.com/css2?family=Montserrat:ital,wght@0,300..900;1,300..900&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="{{ url_for('static', filename='css/reset.css') }}">
+  <link rel="stylesheet" href="{{ url_for('static', filename='css/style.css') }}">
+  <link rel="shortcut icon" href="{{ url_for('static', filename='images/icon.png') }}">
+  <title>Start a Project — A.Holovichov</title>
 </head>
 <body>
+  <div class="bg-glow glow-1"></div>
+  <div class="bg-glow glow-2"></div>
 
-<h2>FillForm</h2>
+  <header class="header" style="min-height: auto;">
+    <div class="container">
+      <nav class="header__inner glass-nav">
+        <div class="header__brand">
+           <a class="brand-logo" href="{{ url_for('index') }}">A.Holovichov</a>
+        </div>
 
-<form action="" method="post" novalidate>
-    {{ form.hidden_tag() }}
-    <p>
-        {{ form.username.label }} <br>
-        {{ form.username(size = 40) }}
-    </p>
+        <ul class="header__list" id="glass-nav">
+          <li class="header__list-item"><a class="header__list-link" href="{{ url_for('index') }}#price">price</a></li>
+          <li class="header__list-item"><a class="header__list-link" href="{{ url_for('index') }}#process">process</a></li>
+          <li class="header__list-item"><a class="header__list-link" href="{{ url_for('index') }}#project">projects</a></li>
+          <li class="header__list-item"><a class="header__list-link" href="{{ url_for('index') }}#contact">contact</a></li>
+        </ul>
 
-    <p>
-        {{ form.email.label }} <br>
-        {{ form.email(size = 40) }}
-    </p>
+        <div class="header__socials">
+          <a class="social-link" target="_blank" href="https://www.linkedin.com/in/sasha-golovichov-a96a57364/">
+            <img src="{{ url_for('static', filename='images/man.svg') }}" alt="" width="20" height="24" />
+          </a>
+          <a class="social-link" target="_blank" href="https://www.instagram.com/nexora_9/">
+            <img src="{{ url_for('static', filename='images/inst.svg') }}" alt="" width="20" height="20" />
+          </a>
+        </div>
 
-    <p>
-        {{ form.body.label }} <br>
-        {{ form.body(size = 80) }}
-    </p>
+        <div class="burger" id="burger">☰</div>
+      </nav>
+    </div>
+  </header>
 
-    <p>
-        {{ form.submit() }}
-    </p>
-</form>
+  <main class="main" style="padding-top: 40px; padding-bottom: 60px;">
+    <section class="contact-section" style="padding: 40px 0;">
+      <div class="container">
+        <h2 class="section-title">Let's work together</h2>
+        <div class="contact__inner glass-card">
+          <p class="contact__desc">Fill out the form below or drop me a direct message to discuss your next web project.</p>
 
+          <form action="" method="post" novalidate class="contact__form">
+            {{ form.hidden_tag() }}
+
+            <div class="form-group">
+              {{ form.username(class="glass-input", placeholder="Your Name or Telegram Username(@example)") }}
+              {% for error in form.username.errors %}
+                <span class="form-error">{{ error }}</span>
+              {% endfor %}
+            </div>
+
+            <div class="form-group">
+              {{ form.email(class="glass-input", placeholder="Email") }}
+              {% for error in form.email.errors %}
+                <span class="form-error">{{ error }}</span>
+              {% endfor %}
+            </div>
+
+            <div class="form-group">
+              {{ form.project_type(class="glass-input") }}
+            </div>
+
+            <div class="form-group">
+              {{ form.body(class="glass-input", placeholder="Describe your project goals or scope...", rows="4") }}
+              {% for error in form.body.errors %}
+                <span class="form-error">{{ error }}</span>
+              {% endfor %}
+            </div>
+
+            <div class="form-group">
+              {{ form.submit(class="cta-btn primary glass-btn submit-btn") }}
+            </div>
+          </form>
+
+        </div>
+      </div>
+    </section>
+  </main>
+
+  <footer class="footer">
+    <div class="container">
+      <a class="massage-icon" href="https://www.instagram.com/nexora_9/" target="_blank" aria-label="Go to contact section">
+        <img src="{{ url_for('static', filename='images/message.svg') }}" alt="" />
+      </a>
+      <p class="footer_text">Ready to bring your ideas to life? Let's discuss today!</p>
+      <a class="cta-btn primary glass-btn" href="https://www.instagram.com/nexora_9/" target="_blank">get in touch</a>
+    </div>
+  </footer>
+
+  <div class="menu-overlay" id="menu-overlay"></div>
+
+  <script src="{{ url_for('static', filename='js/main.js') }}"></script>
 </body>
 </html>

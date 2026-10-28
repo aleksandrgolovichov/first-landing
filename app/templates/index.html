@@ -10,34 +10,47 @@
   <link href="https://fonts.googleapis.com/css2?family=Montserrat:ital,wght@0,300..900;1,300..900&display=swap" rel="stylesheet">
   <link rel="stylesheet" href="{{ url_for('static', filename='css/reset.css') }}">
   <link rel="stylesheet" href="{{ url_for('static', filename='css/style.css') }}">
+  <link rel="stylesheet" href="{{ url_for('static', filename='css/style_form.css') }}">
   <link rel="shortcut icon" href="{{ url_for('static', filename='images/icon.png') }}">
-  <title>A.Golovichov — Innovative Design & Web Development</title>
+  <title>A.Holovichov — Innovative Design & Web Development</title>
 </head>
 <body>
- <div class="bg-glow glow-1"></div>
+  <div class="bg-glow glow-1"></div>
   <div class="bg-glow glow-2"></div>
 
-  <header class="header">
+  <header class="header" style="min-height: auto;">
     <div class="container">
       <nav class="header__inner glass-nav">
         <div class="header__brand">
-           <a class="brand-logo" href="#">A.Golovichov</a>
+           <a class="brand-logo" href="{{ url_for('index') }}">A.Holovichov</a>
         </div>
+        <ul class="header__list" id="glass-nav">
+          <li class="header__list-item"><a class="header__list-link" href="{{ url_for('index') }}#price">price</a></li>
+          <li class="header__list-item"><a class="header__list-link" href="{{ url_for('index') }}#process">process</a></li>
+          <li class="header__list-item"><a class="header__list-link" href="{{ url_for('index') }}#project">projects</a></li>
+          <li class="header__list-item"><a class="header__list-link" href="{{ url_for('index') }}#contact">contact</a></li>
 
-          <ul class="header__list" id="glass-nav">
-            <li class="header__list-item"><a class="header__list-link" href="#price">price</a></li>
-            <li class="header__list-item"><a class="header__list-link" href="#process">process</a></li>
-            <li class="header__list-item"><a class="header__list-link" href="#project">projects</a></li>
-            <li class="header__list-item"><a class="header__list-link" href="#contact">contact</a></li>
-          </ul>
-
-          <div class="header__socials">
-            <a class="social-link" target="_blank" href="https://www.linkedin.com/in/sasha-golovichov-a96a57364/">
+          <li class="header__list-item header__list-item--social header__list-item--social-first">
+            <a class="header__list-link header__social-link" target="_blank" rel="noopener noreferrer" href="https://www.linkedin.com/in/sasha-golovichov-a96a57364/">
               <img src="{{ url_for('static', filename='images/man.svg') }}" alt="" width="20" height="24" />
+              <span>LinkedIn</span>
             </a>
-            <a class="social-link" target="_blank" href="https://www.instagram.com/nexora_9/">
+          </li>
+          <li class="header__list-item header__list-item--social">
+            <a class="header__list-link header__social-link" target="_blank" rel="noopener noreferrer" href="https://www.instagram.com/nexora_9/">
               <img src="{{ url_for('static', filename='images/inst.svg') }}" alt="" width="20" height="20" />
+              <span>Instagram</span>
             </a>
+          </li>
+        </ul>
+
+        <div class="header__socials">
+          <a class="social-link" target="_blank" href="https://www.linkedin.com/in/sasha-golovichov-a96a57364/">
+            <img src="{{ url_for('static', filename='images/man.svg') }}" alt="" width="20" height="24" />
+          </a>
+          <a class="social-link" target="_blank" href="https://www.instagram.com/nexora_9/">
+            <img src="{{ url_for('static', filename='images/inst.svg') }}" alt="" width="20" height="20" />
+          </a>
         </div>
 
         <div class="burger" id="burger">☰</div>
@@ -67,7 +80,6 @@
       <div class="container">
         <h2 class="section-title">Pricing & Services</h2>
         <div class="price__grid">
-
           <div class="price__card glass-card">
             <div class="card-icon icon-landing"></div>
             <h3 class="price__item-title">Landing page</h3>
@@ -77,7 +89,6 @@
               <li><span>time</span> <strong>min 3 days</strong></li>
             </ul>
           </div>
-
           <div class="price__card glass-card">
             <div class="card-icon icon-web"></div>
             <h3 class="price__item-title">Web-application</h3>
@@ -87,7 +98,6 @@
               <li><span>time</span> <strong>min 7 days</strong></li>
             </ul>
           </div>
-
           <div class="price__card glass-card">
             <div class="card-icon icon-corporate"></div>
             <h3 class="price__item-title">Corporate site</h3>
@@ -97,7 +107,6 @@
               <li><span>time</span> <strong>min 5 days</strong></li>
             </ul>
           </div>
-
           <div class="price__card glass-card">
             <div class="card-icon icon-mobile"></div>
             <h3 class="price__item-title">Mobile application</h3>
@@ -107,7 +116,6 @@
               <li><span>time</span> <strong>min 10 days</strong></li>
             </ul>
           </div>
-
         </div>
       </div>
     </section>
@@ -116,42 +124,35 @@
       <div class="container">
         <h2 class="section-title">Stages of Development</h2>
         <div class="process__grid">
-
           <div class="process__card glass-card" data-step="01">
             <h4 class="process-inner__title">Research</h4>
             <p class="process__text">Competitor analysis, best practices identification, and target audience research.</p>
           </div>
-
           <div class="process__card glass-card" data-step="02">
             <h4 class="process-inner__title">Prototyping</h4>
             <p class="process__text">Wireframing low-fidelity layouts for customer alignment and feedback.</p>
           </div>
-
           <div class="process__card glass-card" data-step="03">
             <h4 class="process-inner__title">Copywriting</h4>
             <p class="process__text">Structuring and writing website copy with your team or internal copywriter.</p>
           </div>
-
           <div class="process__card glass-card" data-step="04">
             <h4 class="process-inner__title">Design</h4>
             <p class="process__text">Creating high-fidelity UI layouts for desktop, tablet, and mobile devices.</p>
           </div>
-
           <div class="process__card glass-card" data-step="05">
             <h4 class="process-inner__title">Launching</h4>
             <p class="process__text">Design handoff and support for developers throughout the implementation stage.</p>
           </div>
-
           <div class="process__card glass-card" data-step="06">
             <h4 class="process-inner__title">Improvement</h4>
             <p class="process__text">Iterative UX modifications to increase conversion rates based on real data.</p>
           </div>
-
         </div>
       </div>
     </section>
 
-    <section id="project" class="project">
+   <section id="project" class="project">
       <div class="container">
         <h2 class="section-title">Selected Projects</h2>
         <div class="project__inner">
@@ -223,32 +224,13 @@
     <section id="contact" class="contact-section">
       <div class="container">
         <h2 class="section-title">Let's work together</h2>
-        <div class="contact__inner glass-card">
-          <p class="contact__desc">Fill out the form below or drop me a direct message to discuss your next web project.</p>
-
-          <form id="projectForm" class="contact__form">
-
-            <div class="form-group">
-              <input type="text" id="clientName" placeholder="Your Name" required class="glass-input">
-            </div>
-            <div class="form-group">
-              <input type="text" id="clientContact" placeholder="Email/Telegram(@username)" required class="glass-input">
-            </div>
-            <div class="form-group">
-              <select id="projectType" class="glass-input">
-                <option value="landing">Landing page</option>
-                <option value="web">Web-application</option>
-                <option value="corporate">Corporate site</option>
-                <option value="mobile">Mobile application</option>
-              </select>
-            </div>
-            <div class="form-group">
-              <textarea id="projectDetails" placeholder="Describe your project goals or scope..." rows="4" required class="glass-input"></textarea>
-            </div>
-            <button type="submit" class="cta-btn primary glass-btn submit-btn">Send</button>
-            <p id="formStatus" class="form-status"></p>
-          </form>
-
+        <div class="contact__inner glass-card" style="text-align: center; padding: 60px 40px;">
+          <p class="contact__desc" style="margin-bottom: 36px; max-width: 500px; margin-left: auto; margin-right: auto;">
+            Ready to start your next project? Click below to fill out the details and get in touch.
+          </p>
+          <a href="{{ url_for('form') }}" class="cta-btn primary glass-btn" style="display: inline-block; text-decoration: none;">
+            Fill out the form
+          </a>
         </div>
       </div>
     </section>
@@ -263,6 +245,8 @@
       <a class="cta-btn primary glass-btn" href="https://www.instagram.com/nexora_9/" target="_blank">get in touch</a>
     </div>
   </footer>
+
+  <div class="menu-overlay" id="menu-overlay"></div>
 
   <script src="{{ url_for('static', filename='js/main.js') }}"></script>
 </body>
